@@ -2,6 +2,12 @@
 
 A static web app for building a multi-week running plan and viewing **mileage-based fueling** targets tied to each run. There is no build step: open the pages in a browser or serve the folder locally.
 
+## Live site (GitHub Pages)
+
+**[https://camdigitydog-ux.github.io/ULTRA-1.0/](https://camdigitydog-ux.github.io/ULTRA-1.0/)**
+
+The repository is served from the **`main`** branch root. After each push, Pages rebuilds in about a minute.
+
 ## Features
 
 - **Create plan** (`index.html`) — Goal distance, plan length, runs per week, level, and start date; generates a weekly breakdown stored in the browser (`localStorage`).
@@ -40,4 +46,4 @@ Any static file server works (VS Code Live Server, `npx serve`, etc.).
 
 ## Repository
 
-[github.com/camdigitydog-ux/ULTRA-1.0](https://github.com/camdigitydog-ux/ULTRA-1.0)
+[github.com/camdigitydog-ux/ULTRA-1.0](https://github.com/camdigitydog-ux/ULTRA-1.0) (public — required for free GitHub Pages)

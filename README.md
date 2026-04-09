@@ -4,7 +4,7 @@ A static web app for building a multi-week running plan and viewing **mileage-ba
 
 ## Live site (GitHub Pages)
 
-**Primary:** **[https://cam-ultra-planner-2026.app](https://cam-ultra-planner-2026.app)**
+
 
 **GitHub default URL:** [https://camdigitydog-ux.github.io/ULTRA-1.0/](https://camdigitydog-ux.github.io/ULTRA-1.0/)
 

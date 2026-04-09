@@ -1,0 +1,28 @@
+Custom domain example for ULTRA 1.0 (GitHub Pages)
+==================================================
+
+1) Pick a hostname only YOU will use
+   Example style (long names are often still available — always search your registrar):
+     ultra10-planner-demo.net
+     cam-ultra-planner-2026.app
+     ultra1-training-cam-9x4.io
+
+   A quick DNS lookup showed no zone for “ultra10-planner-demo.net” at the time this
+   file was added — that usually means nobody has published DNS for it yet, but the
+   name can still be registered or premium-priced. ONLY your registrar’s search is
+   authoritative.
+
+2) After you buy the domain, at DNS create:
+     Type: CNAME
+     Host: www   (or “cam”, “app”, etc. — match the left part of your hostname)
+     Value: camdigitydog-ux.github.io
+   (No https:// in the target.)
+
+3) In this repo, the root file must be named CNAME (no extension), one line only:
+     your-subdomain.yourdomain.com
+
+4) GitHub: Repository → Settings → Pages → Custom domain → same hostname → Save.
+   Turn on “Enforce HTTPS” when GitHub allows it.
+
+Reserved names for documentation (do NOT register — you can’t use for real sites):
+  example.com, example.net, example.org (see RFC 2606)

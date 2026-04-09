@@ -4,11 +4,11 @@ A static web app for building a multi-week running plan and viewing **mileage-ba
 
 ## Live site (GitHub Pages)
 
-**Primary:** **[https://cam.runultra.com](https://cam.runultra.com)**
+**Primary:** **[https://cam-ultra-planner-2026.app](https://cam-ultra-planner-2026.app)**
 
 **GitHub default URL:** [https://camdigitydog-ux.github.io/ULTRA-1.0/](https://camdigitydog-ux.github.io/ULTRA-1.0/)
 
-The site is served from the **`main`** branch root. The repo includes a **`CNAME`** file for **`cam.runultra.com`**. At your DNS provider, point **`cam.runultra.com`** with a **CNAME** to **`camdigitydog-ux.github.io`**, then in the repo **Settings → Pages** confirm the custom domain and **Enforce HTTPS** once DNS verifies.
+The site is served from the **`main`** branch root. The repo **`CNAME`** file lists **`cam-ultra-planner-2026.app`**. This is an **apex** hostname: at your DNS provider use GitHub’s **[apex A/AAAA records](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain)** (or your host’s **ALIAS** to `camdigitydog-ux.github.io` if supported). Then **Settings → Pages** → confirm the custom domain → **Enforce HTTPS** when ready.
 
 ## Features
 

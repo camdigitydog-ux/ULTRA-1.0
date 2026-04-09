@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#040a07">
+  <title>ULTRA 1.0 - Training Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-plan">
+  <header class="hero hero-compact">
+    <div class="hero-inner">
+      <p class="eyebrow">Performance Planner</p>
+      <h1>ULTRA 1.0</h1>
+      <p class="subtitle">Track progress and work through your weekly breakdown.</p>
+      <nav class="page-nav site-nav" aria-label="Site">
+        <a class="nav-link" href="index.html">Create plan</a>
+        <a class="nav-link nav-link-current" href="plan.html" aria-current="page">Weekly plan</a>
+        <a class="nav-link" href="nutrition.html">Mileage fuel</a>
+        <a class="nav-link" href="nutrition-basics.html">Fueling basics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container container-plan">
+    <section class="panel dashboard-panel">
+      <h2>Progress Dashboard</h2>
+      <div class="stats">
+        <article>
+          <span class="label">Completed Runs</span>
+          <strong id="completed-runs">0</strong>
+        </article>
+        <article>
+          <span class="label">Total Runs</span>
+          <strong id="total-runs">0</strong>
+        </article>
+        <article>
+          <span class="label">Completion</span>
+          <strong id="completion-percent">0%</strong>
+        </article>
+      </div>
+      <div class="bar-wrap" aria-hidden="true">
+        <div id="progress-bar" class="bar"></div>
+      </div>
+    </section>
+
+    <section class="panel weekly-panel">
+      <div class="weekly-head">
+        <h2>Weekly Plan</h2>
+        <button id="clear-plan" type="button" class="secondary small-btn">Clear plan</button>
+      </div>
+      <p class="hint">Mark runs complete. Click a run or <strong>Nutrition</strong> to open fueling for that day’s distance.</p>
+      <div id="plan-output" class="plan-output">
+        <p class="empty-plan-msg">No plan yet. <a href="index.html">Create your plan</a> to get started.</p>
+      </div>
+    </section>
+  </main>
+
+  <template id="week-template">
+    <details class="week-card week-dropdown">
+      <summary class="week-summary">
+        <h3></h3>
+        <span class="week-total"></span>
+      </summary>
+      <div class="week-body">
+        <div class="week-body-inner">
+          <p class="week-meta"></p>
+          <ul class="run-list"></ul>
+        </div>
+      </div>
+    </details>
+  </template>
+
+  <template id="run-template">
+    <li class="run-item">
+      <div class="run-row">
+        <div class="run-line">
+          <input type="checkbox" class="run-check">
+          <a class="run-mileage-link" href="nutrition.html"><span class="run-text"></span></a>
+        </div>
+        <a class="run-nutrition-btn" href="nutrition.html">Nutrition</a>
+      </div>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

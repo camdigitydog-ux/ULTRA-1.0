@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#040a07">
+  <title>ULTRA 1.0 - Create Your Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-setup">
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Performance Planner</p>
+      <h1>ULTRA 1.0</h1>
+      <p class="subtitle">Build smarter race blocks from 5K to 100 Miler.</p>
+      <nav class="page-nav site-nav" aria-label="Site">
+        <a class="nav-link nav-link-current" href="index.html" aria-current="page">Create plan</a>
+        <a class="nav-link" href="plan.html">Weekly plan</a>
+        <a class="nav-link" href="nutrition.html">Mileage fuel</a>
+        <a class="nav-link" href="nutrition-basics.html">Fueling basics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container container-setup">
+    <section class="panel planner-panel">
+      <h2>Create Your Plan</h2>
+      <form id="plan-form" class="grid">
+        <label>
+          Goal race distance
+          <select id="goal-distance" required>
+            <option value="5K">5K</option>
+            <option value="10K">10K</option>
+            <option value="Half Marathon">Half Marathon</option>
+            <option value="Marathon">Marathon</option>
+            <option value="50K">50K</option>
+            <option value="50 Miler">50 Miler</option>
+            <option value="100 Miler">100 Miler</option>
+          </select>
+        </label>
+
+        <label>
+          Plan length (weeks)
+          <input id="plan-weeks" type="number" min="4" max="30" value="8" required>
+        </label>
+
+        <label>
+          Runs per week
+          <input id="runs-per-week" type="number" min="2" max="7" value="4" required>
+        </label>
+
+        <label>
+          Runner level
+          <select id="runner-level" required>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="Pro">Pro</option>
+          </select>
+        </label>
+
+        <label>
+          Training start date
+          <input id="start-date" type="date" required>
+        </label>
+
+        <div class="actions">
+          <button type="submit">Generate Plan</button>
+          <button id="reset-plan" type="button" class="secondary">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

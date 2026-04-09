@@ -4,31 +4,11 @@ A static web app for building a multi-week running plan and viewing **mileage-ba
 
 ## Live site (GitHub Pages)
 
-**[https://camdigitydog-ux.github.io/ULTRA-1.0/](https://camdigitydog-ux.github.io/ULTRA-1.0/)**
+**Primary:** **[https://cam.runultra.com](https://cam.runultra.com)**
 
-The repository is served from the **`main`** branch root. After each push, Pages rebuilds in about a minute.
+**GitHub default URL:** [https://camdigitydog-ux.github.io/ULTRA-1.0/](https://camdigitydog-ux.github.io/ULTRA-1.0/)
 
-### Custom domain (for ULTRA 1.0)
-
-GitHub Pages URLs must be a real hostname you control (for example `www.ultra10.com` or `ultra.yourdomain.com`). Spaces and branding text like “ULTRA 1.0” alone are not valid DNS names—pick a domain or subdomain and point it at Pages.
-
-1. **DNS at your registrar** (replace `www` / hostname with yours):
-   - **Subdomain (e.g. `www` or `app`):** create a **CNAME** record → `camdigitydog-ux.github.io` (no `https://`).
-   - **Apex (`yourdomain.com` only):** use GitHub’s [documented A and AAAA records](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain) (or an **ALIAS/ANAME** to `camdigitydog-ux.github.io` if your DNS supports it).
-
-2. **GitHub:** repo **Settings → Pages → Custom domain** → enter the exact hostname (e.g. `www.ultra10.com`) → **Save**. Wait for the DNS check to pass.
-
-3. **This repo:** add a file named **`CNAME`** in the **repository root** (no file extension) whose **only line** is that same hostname, then commit and push:
-
-   ```text
-   www.ultra10.com
-   ```
-
-   (Use your real hostname; the example is not configured for this project.)
-
-4. Leave **Enforce HTTPS** on after the certificate is issued (often a few minutes after DNS is correct).
-
-If you tell us your exact hostname (e.g. `app.mydomain.com`), we can add the `CNAME` file here for you.
+The site is served from the **`main`** branch root. The repo includes a **`CNAME`** file for **`cam.runultra.com`**. At your DNS provider, point **`cam.runultra.com`** with a **CNAME** to **`camdigitydog-ux.github.io`**, then in the repo **Settings → Pages** confirm the custom domain and **Enforce HTTPS** once DNS verifies.
 
 ## Features
 

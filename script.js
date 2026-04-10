@@ -153,9 +153,9 @@ function createPlan({ goalDistance, runnerLevel, weeks, runsPerWeek, startDate }
   const goalMiles = raceTargetsMiles[goalDistance];
   const profile = raceProfiles[goalDistance][runnerLevel];
   const startWeeklyMiles = profile.startWeeklyMiles;
-  const possiblePeak = startWeeklyMiles * (1 + 0.07 * Math.max(weeks - 1, 0));
-  const levelCutbackDrop = runnerLevel === "Pro" ? 0.13 : runnerLevel === "Advanced" ? 0.15 : 0.18;
-  const levelMaxGrowth = runnerLevel === "Pro" ? 0.09 : runnerLevel === "Advanced" ? 0.1 : 0.12;
+  const possiblePeak = startWeeklyMiles * (1 + 0.05 * Math.max(weeks - 1, 0));
+  const levelCutbackDrop = runnerLevel === "Pro" ? 0.12 : runnerLevel === "Advanced" ? 0.14 : 0.16;
+  const levelMaxGrowth = runnerLevel === "Pro" ? 0.08 : runnerLevel === "Advanced" ? 0.09 : 0.1;
   const peakWeeklyMiles = clamp(
     Math.min(profile.peakWeeklyMiles, possiblePeak),
     startWeeklyMiles + 2,

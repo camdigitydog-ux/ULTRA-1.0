@@ -1,31 +1,7 @@
 /**
  * Mileage-based fueling ranges for training (not medical or dietetic advice).
- *
- * Evidence basis (synthesized for runners; see nutrition-basics.html#sources):
- * - During-exercise carbohydrate: duration-based frameworks (e.g. Jeukendrup 2014
- *   Sports Med review on carb intake during exercise; Burke / GSSI contemporary
- *   endurance athlete perspectives). Typical practice bands: little/none for short
- *   sessions; ~30–60 g/h for many 1–2.5 h efforts; ~60 g/h and up to ~90 g/h for
- *   longer work with multiple transportable carbohydrates (glucose + fructose) when
- *   gut-trained. Oxidation/absorption limits are largely intestinal, not strictly
- *   body-weight driven.
- * - Pre-exercise meal carbs: common sports-nutrition practice (~0.5–1.8 g/lb in the
- *   hours before start, scaled to timing and gut tolerance); fluid: ACSM-style
- *   euhydration (~5–7 mL/kg in the ~4 h pre-exercise window, individualized).
- * - Post-exercise rapid glycogen: ISSN nutrient timing position stand (Kerksick et al.
- *   2017 JISSN) — aggressive refeeding often discussed around ~1.2 g/kg/h when
- *   turnaround is short; this app uses ~0.45–0.55 g/lb/h (~1.0–1.2 g/kg/h) in that
- *   spirit plus lower targets when the next meal is soon. Protein often ~0.2–0.4 g/kg
- *   with meals in recovery contexts.
- * - Sodium/fluid during & after: highly individual (sweat rate, sweat sodium, climate).
- *   ACSM emphasizes individualized fluid plans, sodium-containing beverages for long
- *   sessions, and avoiding excess hypotonic water intake.
- * - Energy availability / underfueling: IOC consensus on REDs (Mountjoy et al. 2023
- *   BJSM) informs “big picture” warnings, not numeric targets here.
- *
- * Method: distance bands approximate session length using ~9 min/mi for card math;
- * users should prioritize actual duration, intensity, heat, and health status.
- * Reference 154 lb (70 kg) for g↔lb examples only.
+ * Bands use ~9 min/mi to estimate hours for on-card math; individualize by actual
+ * duration, intensity, climate, and health. Reference 154 lb (70 kg) for g per lb examples.
  */
 (function () {
   /** @typedef {{ amount: string, timing: string, meals: string }} NutrientRow */
@@ -949,7 +925,6 @@
   function buildDailyBasicsPanel() {
     return `<div class="nutrition-daily-panel">
       <p class="nutrition-daily-lede">For day-to-day eating patterns, long-run strategy, and hydration big picture, use <strong>Fueling basics</strong>. This page stays focused on amounts for a single run length.</p>
-      <p class="nutrition-daily-lede">References for mileage fuel ranges: <a href="nutrition-basics.html#sources">Evidence &amp; sources</a>.</p>
       <a class="nutrition-daily-cta" href="nutrition-basics.html">Open Fueling basics</a>
     </div>`;
   }
@@ -967,7 +942,7 @@
       : escapeHtml(guide.label);
     const bandnote = `<p class="nutrition-guide-callout-bandnote">This band describes a typical <strong>${escapeHtml(
       guide.label,
-    )}</strong> run—adjust for pace, heat, and health. “How much to take in” totals use <strong>~9 min/mi</strong> to convert distance to hours unless your link includes exact miles. <a href="nutrition-basics.html#sources">Evidence &amp; sources</a></p>`;
+    )}</strong> run—adjust for pace, heat, and health. “How much to take in” totals use <strong>~9 min/mi</strong> to convert distance to hours unless your link includes exact miles.</p>`;
     const calloutBody = `<p class="nutrition-guide-callout-text">${escapeHtml(guide.blurb)}</p>${bandnote}`;
     const calloutHtml = `<details class="nutrition-guide-callout">
       <summary class="nutrition-guide-callout-summary">

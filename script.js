@@ -283,7 +283,7 @@ function updateProgress() {
 }
 
 const emptyPlanHtml =
-  '<p class="empty-plan-msg">No plan yet. <a href="index.html">Create your plan</a> to get started.</p>';
+  '<div class="empty-state"><p class="empty-plan-msg">No plan here yet. <a href="index.html">Create a plan</a> and we’ll show your weeks below.</p></div>';
 
 function renderPlan() {
   if (!isPlanPage || !output || !weekTemplate || !runTemplate) {

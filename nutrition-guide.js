@@ -996,6 +996,7 @@
     </details>`;
 
     return `<div class="nutrition-guide-app">
+      <p class="nutrition-phase-lede">Use the tabs to move from before your run through recovery and everyday habits.</p>
       <div class="nutrition-phase-tablist" role="tablist" aria-label="Fueling phase">
         <button type="button" class="nutrition-phase-tab" role="tab" id="nut-tab-pre" aria-controls="nut-panel-pre" aria-selected="true" data-phase="pre">Pre-run</button>
         <button type="button" class="nutrition-phase-tab" role="tab" id="nut-tab-during" aria-controls="nut-panel-during" aria-selected="false" tabindex="-1" data-phase="during">During run</button>
@@ -1100,8 +1101,8 @@
    */
   function renderMileageMissing(output) {
     output.innerHTML = `<div class="nutrition-mileage-missing" role="status">
-      <p class="nutrition-mileage-missing-lead">No run distance in this link.</p>
-      <p class="nutrition-mileage-missing-hint">Go to your <a href="plan.html">Weekly plan</a> and tap <strong>Nutrition</strong> (or the run line) for the day you want to fuel.</p>
+      <p class="nutrition-mileage-missing-lead">We need a run distance to show tailored fuel targets.</p>
+      <p class="nutrition-mileage-missing-hint">Open your <a href="plan.html">Weekly plan</a>, then tap <strong>Nutrition</strong> or the run you care about—we’ll match numbers to those miles.</p>
     </div>`;
   }
 

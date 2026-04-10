@@ -30,7 +30,7 @@
     <div class="hero-inner">
       <p class="eyebrow">Performance Planner</p>
       <h1>ULTRA 1.0</h1>
-      <p class="subtitle">Track progress and work through your weekly breakdown.</p>
+      <p class="subtitle">See what’s done, what’s left, and open fueling tips that match each run’s distance.</p>
       <nav class="page-nav site-nav" aria-label="Site">
         <a class="nav-link" href="index.html">Create plan</a>
         <a class="nav-link nav-link-current" href="plan.html" aria-current="page">Weekly plan</a>
@@ -42,7 +42,7 @@
 
   <main class="container container-plan">
     <section class="panel dashboard-panel">
-      <h2>Progress Dashboard</h2>
+      <h2>Progress</h2>
       <div class="stats">
         <article>
           <span class="label">Completed Runs</span>
@@ -64,12 +64,14 @@
 
     <section class="panel weekly-panel">
       <div class="weekly-head">
-        <h2>Weekly Plan</h2>
+        <h2>Weekly plan</h2>
         <button id="clear-plan" type="button" class="secondary small-btn">Clear plan</button>
       </div>
-      <p class="hint">Mark runs complete. Click a run or <strong>Nutrition</strong> to open fueling for that day’s distance.</p>
+      <p class="hint">Tap the checkbox when you finish a run. Tap the run line or <strong>Nutrition</strong> to see fuel ideas for that day’s miles.</p>
       <div id="plan-output" class="plan-output">
-        <p class="empty-plan-msg">No plan yet. <a href="index.html">Create your plan</a> to get started.</p>
+        <div class="empty-state">
+          <p class="empty-plan-msg">No plan here yet. <a href="index.html">Create a plan</a> and we’ll show your weeks below.</p>
+        </div>
       </div>
     </section>
   </main>

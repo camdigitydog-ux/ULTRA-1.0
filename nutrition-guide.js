@@ -846,6 +846,31 @@
       .filter((x) => x !== "—");
   }
 
+  /** @param {string[]} items */
+  function dedupeMealItems(items) {
+    const seen = new Set();
+    const out = [];
+    for (const m of items) {
+      const norm = m.toLowerCase();
+      if (seen.has(norm)) {
+        continue;
+      }
+      seen.add(norm);
+      out.push(m);
+    }
+    return out;
+  }
+
+  const MEAL_MENU_META = {
+    carbs: { heading: "Carbohydrates & starches", sectionClass: "nutrition-meal-menu-section--carbs" },
+    protein: { heading: "Protein & anchors", sectionClass: "nutrition-meal-menu-section--protein" },
+    sodium: { heading: "Sodium & savory", sectionClass: "nutrition-meal-menu-section--sodium" },
+    water: { heading: "Fluids", sectionClass: "nutrition-meal-menu-section--water" },
+    electrolytes: { heading: "Electrolytes & drink mixes", sectionClass: "nutrition-meal-menu-section--electrolytes" },
+  };
+
+  const MEAL_MENU_ORDER = ["carbs", "protein", "sodium", "water", "electrolytes"];
+
   /**
    * @param {Record<string, { amount: string, timing: string, meals: string }>} data
    * @param {{ phase: 'pre' | 'during' | 'post', guide: typeof GUIDES[number], exactMiles: number | null | undefined }} ctx
@@ -879,34 +904,41 @@
   }
 
   /**
+   * Grouped food & drink suggestions by nutrient category (from each row’s meal hints).
    * @param {Record<string, { amount: string, timing: string, meals: string }>} data
    */
   function buildMealRow(data) {
-    const seen = new Set();
-    const meals = [];
-    METRIC_ROWS.forEach(({ key }) => {
-      splitMeals(data[key].meals).forEach((m) => {
-        const norm = m.toLowerCase();
-        if (!seen.has(norm)) {
-          seen.add(norm);
-          meals.push(m);
-        }
-      });
-    });
-    const slice = meals.slice(0, 14);
-    if (!slice.length) {
+    const sections = [];
+    for (const key of MEAL_MENU_ORDER) {
+      const cell = data[key];
+      if (!cell || !cell.meals) {
+        continue;
+      }
+      const items = dedupeMealItems(splitMeals(cell.meals));
+      if (!items.length) {
+        continue;
+      }
+      const meta = MEAL_MENU_META[key];
+      const heading = meta.heading;
+      const sectionClass = meta.sectionClass;
+      const slice = items.slice(0, 16);
+      const lis = slice
+        .map(
+          (m) =>
+            `<li class="nutrition-meal-chip"><span class="nutrition-meal-chip-text">${escapeHtml(m)}</span></li>`,
+        )
+        .join("");
+      sections.push(`<section class="nutrition-meal-menu-section ${sectionClass}" aria-label="${escapeHtml(heading)}">
+        <h4 class="nutrition-meal-menu-heading">${escapeHtml(heading)}</h4>
+        <ul class="nutrition-meal-menu-list">${lis}</ul>
+      </section>`);
+    }
+    if (!sections.length) {
       return "";
     }
-    const cards = slice
-      .map(
-        (m) =>
-          `<div class="nutrition-meal-card"><span class="nutrition-meal-card-title">${escapeHtml(m)}</span></div>`,
-      )
-      .join("");
-    return `<section class="nutrition-meal-block" aria-label="Suggested foods">
-      <h3 class="nutrition-subsection-title">Suggested meals &amp; foods</h3>
-      <div class="nutrition-meal-row">${cards}</div>
-    </section>`;
+    return `<div class="nutrition-meal-block" role="region" aria-label="Food and drink ideas by category">
+      <div class="nutrition-meal-menu">${sections.join("")}</div>
+    </div>`;
   }
 
   /**
@@ -917,8 +949,8 @@
     if (!meals.trim()) {
       return "";
     }
-    return `<details class="nutrition-phase-details">
-      <summary class="nutrition-phase-details-summary">Food examples</summary>
+    return `<details class="nutrition-phase-details nutrition-phase-details--menu">
+      <summary class="nutrition-phase-details-summary">Food &amp; drink menu</summary>
       <div class="nutrition-phase-details-body">${meals}</div>
     </details>`;
   }

@@ -1217,39 +1217,93 @@ button.secondary:hover {
   margin-bottom: 0;
 }
 
-.nutrition-meal-block {
-  margin-bottom: 0.15rem;
+.nutrition-phase-details--menu .nutrition-phase-details-body {
+  padding: 0.75rem 0.85rem 0.95rem;
 }
 
-.nutrition-meal-row {
+.nutrition-meal-block {
+  margin-bottom: 0;
+}
+
+/* —— Food & drink menu (grouped by category) —— */
+.nutrition-meal-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.nutrition-meal-menu-section {
+  margin: 0;
+  padding: 0 0 0 0.75rem;
+  border-left: 3px solid rgba(120, 195, 155, 0.35);
+  border-radius: 2px;
+}
+
+.nutrition-meal-menu-section--carbs {
+  border-left-color: rgba(94, 240, 166, 0.55);
+}
+
+.nutrition-meal-menu-section--protein {
+  border-left-color: rgba(232, 197, 110, 0.55);
+}
+
+.nutrition-meal-menu-section--sodium {
+  border-left-color: rgba(251, 146, 60, 0.5);
+}
+
+.nutrition-meal-menu-section--water {
+  border-left-color: rgba(45, 212, 191, 0.5);
+}
+
+.nutrition-meal-menu-section--electrolytes {
+  border-left-color: rgba(167, 139, 250, 0.45);
+}
+
+.nutrition-meal-menu-heading {
+  margin: 0 0 0.52rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8ebda0;
+  line-height: 1.25;
+}
+
+.nutrition-meal-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.42rem 0.5rem;
 }
 
-.nutrition-meal-card {
-  flex: 1 1 auto;
-  min-width: 8.5rem;
-  max-width: 16rem;
-  padding: 0.55rem 0.72rem;
-  border-radius: 12px;
-  border: 1px solid rgba(120, 200, 155, 0.2);
-  background: rgba(7, 22, 16, 0.65);
-  transition:
-    border-color 0.15s ease,
-    background 0.15s ease;
+.nutrition-meal-chip {
+  margin: 0;
 }
 
-.nutrition-meal-card:hover {
-  border-color: rgba(160, 230, 190, 0.35);
-  background: rgba(10, 30, 22, 0.78);
-}
-
-.nutrition-meal-card-title {
-  font-size: 0.84rem;
+.nutrition-meal-chip-text {
+  display: inline-block;
+  padding: 0.4rem 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
+  line-height: 1.35;
   color: #e8f6ec;
-  line-height: 1.4;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(5, 22, 16, 0.82) 100%);
+  border: 1px solid rgba(120, 195, 155, 0.22);
+  border-radius: var(--radius-pill);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    border-color 0.18s var(--ease-out),
+    background 0.18s var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nutrition-meal-chip:hover .nutrition-meal-chip-text {
+    border-color: rgba(160, 230, 190, 0.38);
+    background: rgba(10, 32, 23, 0.88);
+  }
 }
 
 .nutrition-daily-panel {

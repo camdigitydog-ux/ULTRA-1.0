@@ -991,6 +991,19 @@ button.secondary:hover {
   font-weight: 700;
 }
 
+.nutrition-guide-callout-bandnote a {
+  color: #b6f1c4;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(182, 241, 196, 0.4);
+  text-underline-offset: 2px;
+}
+
+.nutrition-guide-callout-bandnote a:hover {
+  color: #e8fff0;
+  text-decoration-color: rgba(232, 255, 240, 0.55);
+}
+
 .nutrition-tabpanels {
   min-height: 2rem;
 }
@@ -1429,6 +1442,30 @@ button.secondary:hover {
   font-size: 0.78rem;
   color: #8fa99a;
   line-height: 1.45;
+}
+
+.nutrition-page-foot .nutrition-disclaimer a {
+  color: #9bc9ae;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(155, 201, 174, 0.45);
+  text-underline-offset: 2px;
+}
+
+.nutrition-page-foot .nutrition-disclaimer a:hover {
+  color: #d4efd9;
+}
+
+.nutrition-daily-panel a:not(.nutrition-daily-cta) {
+  color: #b6f1c4;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(182, 241, 196, 0.4);
+  text-underline-offset: 2px;
+}
+
+.nutrition-daily-panel a:not(.nutrition-daily-cta):hover {
+  color: #e8fff0;
 }
 
 .plan-output {

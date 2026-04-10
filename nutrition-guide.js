@@ -2,6 +2,17 @@
  * Mileage-based fueling ranges for training (not medical or dietetic advice).
  * Bands use ~9 min/mi to estimate hours for on-card math; individualize by actual
  * duration, intensity, climate, and health. Reference 154 lb (70 kg) for g per lb examples.
+ *
+ * Data synthesis draws on a wide evidence base (cross-checked, not any single doc):
+ * — Reviews on carbohydrate oxidation and intake during exercise (e.g. Jeukendrup).
+ * — Society position stands: ISSN (nutrient timing), ACSM (exercise & fluid replacement),
+ *   AND sports-dietetics practice papers where they align.
+ * — IOC / BJSM consensus themes (supplements, REDs, general high-performance nutrition).
+ * — Practitioner-facing science summaries (e.g. GSSI Sports Science Exchange; national
+ *   institute handbooks—AIS, UK Sport, USOPC-style endurance fueling summaries).
+ * — Field norms for ultras (variety, sodium with fluid, avoid excess hypotonic water).
+ * Numbers emphasize typical endurance-running practice; always defer to a clinician or
+ * sports dietitian for medical conditions or personalized plans.
  */
 (function () {
   /** @typedef {{ amount: string, timing: string, meals: string }} NutrientRow */
@@ -16,7 +27,7 @@
       minMiles: 0,
       maxMiles: 5,
       label: "Under 5 mi",
-      blurb: "Usually under 30–45 minutes at typical easy paces. Muscle glycogen is rarely limiting; research suggests intra-run carbs are usually unnecessary unless you’re fasted or pushing very hard.",
+      blurb: "Usually under 30–45 minutes at typical easy paces. Muscle glycogen is rarely limiting; for short hard efforts, mouth rinse or tiny carb sips can help some athletes even when total fuel need is small.",
       pre: {
         carbs: row(
           "0–0.45 g per lb if eating (often 0–50 g total)",
@@ -35,7 +46,7 @@
         ),
         water: row(
           "Often 12–18 fl oz in the 4 h before (more if you’re heavier than ~150–170 lb)",
-          "Start euhydrated; small sips near start if thirsty",
+          "Many hydration frameworks use ~5–7 mL/kg in the ~4 h pre-exercise as a planning anchor; start euhydrated; small sips near start if thirsty",
           "Water, coffee, tea—avoid chugging right before the run",
         ),
         electrolytes: row(
@@ -70,7 +81,7 @@
           "Fruit, oats, sandwich, smoothie—no need to “max” glycogen after easy short runs",
         ),
         protein: row(
-          "0.1–0.2 g protein per lb in the next meal",
+          "0.1–0.25 g protein per lb in the next meal",
           "Within a few hours with usual eating",
           "Yogurt, eggs, fish, tofu, lean meat",
         ),
@@ -95,7 +106,7 @@
       minMiles: 5,
       maxMiles: 8,
       label: "5–8 mi",
-      blurb: "Often 45–75+ minutes depending on pace—around where small amounts of carb during exercise can help some athletes (especially past 60–75 min or in heat).",
+      blurb: "Often 45–75+ minutes depending on pace—where duration-based guidance starts to favor small exogenous carbs for many (especially past ~60 min, high heat, or fasted starts).",
       pre: {
         carbs: row(
           "0.45–1.1 g carbs per lb in the 1–3 h window (e.g. about 70–170 g for a 154 lb runner if 3 h out)",
@@ -137,7 +148,7 @@
         ),
         water: row(
           "Drink to thirst; planned sips in heat",
-          "Often 3–6 fl oz every 15–20 min if sweating",
+          "Many fluid-replacement summaries suggest small volumes every 10–20 min when sweat loss is high; often ~3–6 fl oz per interval if tolerated",
           "Water or diluted sports drink",
         ),
         electrolytes: row(
@@ -153,7 +164,7 @@
           "Rice + veg, sweet potato, fruit, pancakes, smoothie",
         ),
         protein: row(
-          "0.1–0.2 g protein per lb in the same meal/snack",
+          "0.1–0.25 g protein per lb in the same meal/snack",
           "Within 2 h",
           "Greek yogurt, eggs, fish, chicken, tofu",
         ),
@@ -178,7 +189,7 @@
       minMiles: 8,
       maxMiles: 12,
       label: "8–12 mi",
-      blurb: "Often ~75–120+ minutes at easy paces—fueling is driven by duration more than miles. Past ~60–90 min, exogenous carbs usually help; many athletes use about 30–60 g/h once they start fueling (start early, train the gut). Frameworks differ slightly by source—use what you tolerate.",
+      blurb: "Often ~75–120+ minutes at easy paces—fueling is driven by duration more than miles. International consensus-style summaries for ~1–3 h endurance often center ~30–60 g carbohydrate per hour once fueling begins; start low, train the gut, and adjust for heat and intensity.",
       pre: {
         carbs: row(
           "0.9–1.6 g carbs per lb in the 2–4 h window (taper fiber/fat)",
@@ -209,7 +220,7 @@
       during: {
         carbs: row(
           "30–60 g per hour (after first 45–60 min for many)",
-          "Earlier fueling is easier on the gut than a late catch-up",
+          "Intake capacity is largely gut-limited (not strictly by body weight); earlier steady fueling beats late catch-up",
           "Gels + water, chews, drink mix, dates—split doses every 15–20 min",
         ),
         protein: row("—", "—", "—"),
@@ -236,7 +247,7 @@
           "Pasta, rice bowl, smoothie + oats, potatoes, juice",
         ),
         protein: row(
-          "0.1–0.2 g protein per lb with those carbs",
+          "0.1–0.25 g protein per lb with those carbs",
           "Within 2 h is ideal, not mandatory perfection",
           "Fish, chicken, Greek yogurt, tofu, chocolate milk",
         ),
@@ -261,7 +272,7 @@
       minMiles: 12,
       maxMiles: 16,
       label: "12–16 mi",
-      blurb: "Usually 1.5–2.5+ hours for many runners—fueling often trends toward the high end of 30–60 g/h or 60 g/h as you approach multi-hour duration; fluid and sodium should follow your tested sweat pattern.",
+      blurb: "Usually 1.5–2.5+ hours for many runners—as duration approaches multi-hour work, many guidelines move toward ~60 g/h or the upper part of the 30–60 g/h band; fluid and sodium should follow your tested sweat pattern.",
       pre: {
         carbs: row(
           "1.1–1.8 g carbs per lb in the 2–4 h window (low fiber/fat)",
@@ -323,7 +334,7 @@
           "Rice + beans, pizza slice, smoothie bowls, juice",
         ),
         protein: row(
-          "0.1–0.2 g protein per lb per eating occasion",
+          "0.1–0.25 g protein per lb per eating occasion",
           "First meal + again later same day",
           "Salmon, chicken, Greek yogurt, lentil stew",
         ),
@@ -348,7 +359,7 @@
       minMiles: 16,
       maxMiles: 23,
       label: "16–23 mi",
-      blurb: "Often 2–4+ hours—many athletes target about 60 g carbohydrate/hour for multi-hour work; higher intakes (70–90 g/h) are mainly for gut-trained athletes using mixed carbs (e.g. glucose + fructose). Rehearse your race nutrition here.",
+      blurb: "Often 2–4+ hours—~60 g carbohydrate/hour is a common multi-hour target; above ~60 g/h, mixed carbohydrates (e.g. glucose + fructose) match intestinal transport limits for gut-trained athletes. Elite long-course practice sometimes pushes higher—only with rehearsal. Rehearse your race nutrition here.",
       pre: {
         carbs: row(
           "1.4–1.8 g carbs per lb in the 2–4 h window + optional small top-up if trained",
@@ -379,7 +390,7 @@
       during: {
         carbs: row(
           "60 g/h typical target; 70–90 g/h only if gut-trained",
-          "Use glucose + fructose sources for high rates (gels, chews, mix, cola if practiced)",
+          "Mixed carb types (glucose:fructose or maltodextrin:fructose blends) support higher oxidation than single-sugar sources alone",
           "Gels + water, blocks, drink mix, flat cola, potatoes",
         ),
         protein: row(
@@ -410,7 +421,7 @@
           "Rice plates, noodles, juice, bagels, fruit",
         ),
         protein: row(
-          "0.1–0.2 g protein per lb per meal; 35–50 g is common first meal",
+          "0.1–0.25 g protein per lb per meal; 35–50 g is common first meal",
           "2–6 h post and again later",
           "Lean burger, chicken + rice, eggs, Greek yogurt",
         ),
@@ -435,10 +446,10 @@
       minMiles: 23,
       maxMiles: Infinity,
       label: "23+ mi",
-      blurb: "Ultra-length efforts (often 4+ hours for many)—high hourly carb intakes (up to 90 g/h) require training the gut and usually mixed carbohydrate types; add variety, sodium, and fluid to match long-hour sweat losses.",
+      blurb: "Ultra-length efforts (often 4+ hours for many)—high hourly carb intakes (often up to ~90 g/h in published endurance guidance) require gut training and mixed carbohydrate types; palatability, sodium with fluid, and variety matter as much as spreadsheets.",
       pre: {
         carbs: row(
-          "High carb 24–48 h: often about 3.5–5.5 g carbs per lb per day for trained athletes (spread meals)",
+          "High carb 24–48 h: often ~3.5–5.5 g carbs per lb per day (~8–12 g/kg/d in many sports-nutrition references; spread meals; individual tolerance varies)",
           "Morning of: about 0.45–1.4 g per lb familiar low-fiber carbs",
           "Pasta/rice night, potatoes, toast, bagels, rice cakes—avoid new foods",
         ),
@@ -497,7 +508,7 @@
           "Pasta, pancakes, juice, fruit, rice bowls, smoothies",
         ),
         protein: row(
-          "0.1–0.2 g protein per lb per meal; 40–60 g first meal is common",
+          "0.1–0.25 g protein per lb per meal; 40–60 g first meal is common",
           "Repeat every 3–5 h for 24–48 h",
           "Eggs, steak, fish, lentil bowls, Greek yogurt",
         ),

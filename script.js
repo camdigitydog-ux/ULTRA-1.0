@@ -108,10 +108,10 @@ function getRunWeight(runType) {
 }
 
 function getTaperFactor(weeksOut) {
-  if (weeksOut === 0) return 0.35;
-  if (weeksOut === 1) return 0.5;
-  if (weeksOut === 2) return 0.7;
-  return 0.8;
+  if (weeksOut === 0) return 0.4;
+  if (weeksOut === 1) return 0.6;
+  if (weeksOut === 2) return 0.78;
+  return 0.86;
 }
 
 function generateWeeklyMileageTargets({
@@ -153,9 +153,9 @@ function createPlan({ goalDistance, runnerLevel, weeks, runsPerWeek, startDate }
   const goalMiles = raceTargetsMiles[goalDistance];
   const profile = raceProfiles[goalDistance][runnerLevel];
   const startWeeklyMiles = profile.startWeeklyMiles;
-  const possiblePeak = startWeeklyMiles * (1 + 0.05 * Math.max(weeks - 1, 0));
-  const levelCutbackDrop = runnerLevel === "Pro" ? 0.12 : runnerLevel === "Advanced" ? 0.14 : 0.16;
-  const levelMaxGrowth = runnerLevel === "Pro" ? 0.08 : runnerLevel === "Advanced" ? 0.09 : 0.1;
+  const possiblePeak = startWeeklyMiles * (1 + 0.045 * Math.max(weeks - 1, 0));
+  const levelCutbackDrop = runnerLevel === "Pro" ? 0.12 : runnerLevel === "Advanced" ? 0.15 : 0.17;
+  const levelMaxGrowth = runnerLevel === "Pro" ? 0.07 : runnerLevel === "Advanced" ? 0.08 : 0.09;
   const peakWeeklyMiles = clamp(
     Math.min(profile.peakWeeklyMiles, possiblePeak),
     startWeeklyMiles + 2,

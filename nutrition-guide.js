@@ -7,6 +7,8 @@
  * — Reviews on carbohydrate oxidation and intake during exercise (e.g. Jeukendrup).
  * — Society position stands: ISSN (nutrient timing), ACSM (exercise & fluid replacement),
  *   AND sports-dietetics practice papers where they align.
+ * — Endurance-company practical guidance patterns (e.g. Precision Fuel & Hydration,
+ *   Maurten, Skratch Labs, TrainingPeaks coaching content) where they align with consensus.
  * — IOC / BJSM consensus themes (supplements, REDs, general high-performance nutrition).
  * — Practitioner-facing science summaries (e.g. GSSI Sports Science Exchange; national
  *   institute handbooks—AIS, UK Sport, USOPC-style endurance fueling summaries).
@@ -225,7 +227,7 @@
         ),
         protein: row("—", "—", "—"),
         sodium: row(
-          "200–600 mg/h (wide range by sweat)",
+          "300–700 mg/h (wide range by sweat and heat)",
           "Use drink labels; add salt if you’re a salty sweater",
           "Sports drink, pretzels on loops, electrolyte mix",
         ),
@@ -235,7 +237,7 @@
           "Alternate water and electrolyte drink if using both",
         ),
         electrolytes: row(
-          "400–800 mg sodium per quart of fluid (32 fl oz) is a common starting band",
+          "500–900 mg sodium per quart of fluid (32 fl oz) is a common starting band",
           "Tune to cramping, thirst, and sweat saltiness",
           "Tabs + water, sports drink, pinch salt in bottle (if practiced)",
         ),
@@ -389,7 +391,7 @@
       },
       during: {
         carbs: row(
-          "60 g/h typical target; 70–90 g/h only if gut-trained",
+          "60–75 g/h typical target; 75–90 g/h only if gut-trained",
           "Mixed carb types (glucose:fructose or maltodextrin:fructose blends) support higher oxidation than single-sugar sources alone",
           "Gels + water, blocks, drink mix, flat cola, potatoes",
         ),
@@ -476,7 +478,7 @@
       },
       during: {
         carbs: row(
-          "60–90 g/h if gut-trained (start lower, build in training)",
+          "60–90 g/h if gut-trained; up to ~100 g/h only for highly trained guts",
           "Mix glucose + fructose sources for higher rates (gels, chews, drink, real food)",
           "Gels, potatoes, rice balls, drink mix, candy, flat soda if practiced",
         ),
@@ -725,7 +727,7 @@
         return {
           main: `${lo}–${hi}`,
           unit: "g",
-          sub: `Session total (~60–90 g/h if gut-trained). ${distNote}`,
+          sub: `Session total (~60–90 g/h; up to ~100 g/h only if highly gut-trained). ${distNote}`,
           isNone: false,
         };
       }
